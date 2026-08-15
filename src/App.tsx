@@ -11,6 +11,9 @@ import { ServicesPage } from './pages/ServicesPage';
 import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
 import { UrbaniaHirePage } from './pages/UrbaniaHirePage';
+import { BlogPage } from './pages/BlogPage';
+import { BlogPostPage } from './pages/BlogPostPage';
+import { blogs } from './data/blogs';
 
 const routeMeta: Record<string, { title: string, description: string }> = {
   '/': { title: 'MS CAR | Premium Transport in Mumbai', description: 'Book premium cars, SUVs, Tempo Travellers, and luxury buses for outstation and local transit.' },
@@ -21,7 +24,16 @@ const routeMeta: Record<string, { title: string, description: string }> = {
   '/services': { title: 'Our Services | MS CAR', description: 'Comprehensive transport solutions including customized tour packages, corporate transport, and event logistics.' },
   '/about': { title: 'About Us | MS CAR', description: 'Learn more about MS CAR, Mumbai\'s premier premium transport service with a legacy of reliability and comfort.' },
   '/contact': { title: 'Contact Us | MS CAR', description: 'Get in touch with MS CAR for bookings, inquiries, and custom transport solutions in Mumbai.' },
+  '/blog': { title: 'Blog | MS CAR', description: 'Read the latest updates, tips, and news on premium car and bus rentals in Mumbai.' },
 };
+
+// Add blog posts to routeMeta dynamically
+blogs.forEach(blog => {
+  routeMeta[`/blog/${blog.slug}`] = {
+    title: blog.metaTitle,
+    description: blog.metaDescription
+  };
+});
 
 function RouteMetaManager() {
   const { pathname } = useLocation();
@@ -62,6 +74,8 @@ export default function App() {
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
           </Routes>
         </main>
         <Footer />
