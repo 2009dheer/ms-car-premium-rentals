@@ -11,6 +11,12 @@ export interface BlogPost {
   imageUrl: string;
   metaTitle: string;
   metaDescription: string;
+  category: string;
+  readingTime: string;
+  author: {
+    name: string;
+    role: string;
+  };
 }
 
 export const blogs: BlogPost[] = [
@@ -23,6 +29,12 @@ export const blogs: BlogPost[] = [
     imageUrl: tempoTravellerMain,
     metaTitle: '20 Seater Tempo Traveller | 17 Seater Hire | MS CAR',
     metaDescription: 'Rent a 20 Seater Tempo Traveller or 17 Seater Tempo Traveller with MS CAR for safe, comfortable, and affordable group travel, tours, weddings, and corporate trips.',
+    category: 'Group Travel',
+    readingTime: '5 min read',
+    author: {
+      name: 'MS CAR Editorial',
+      role: 'Travel Expert'
+    },
     content: `
       <p>A 20 Seater Tempo Traveller will ensure comfort, space for leg room and air conditioning, for long journeys. A 20 Seater Tempo Traveller can be your ideal vehicle for both commuting to a business function or embarking on a weekend journey.</p>
       <p>This is also advantageous for safety purposes. A ride with experienced drivers, who understand the conditions of urban and intercity driving, can ensure a comfortable and relaxing experience.</p>
@@ -79,6 +91,12 @@ export const blogs: BlogPost[] = [
     imageUrl: carInnovaCrysta,
     metaTitle: 'Airport Cab Mumbai | Car Hire with Driver Mumbai | MS CAR',
     metaDescription: 'Book Airport Cab Mumbai with MS CAR. Reliable Car Hire with Driver Mumbai for airport transfers, business travel, and comfortable city rides.',
+    category: 'Airport Transfers',
+    readingTime: '6 min read',
+    author: {
+      name: 'MS CAR Editorial',
+      role: 'Transport Specialist'
+    },
     content: `
       <p>Navigating Mumbai's traffic and finding the fastest routes by trained drivers make for smooth and timely travel.</p>
       <p><strong>Car Hire with Driver Mumbai offers a variety of benefits</strong></p>
