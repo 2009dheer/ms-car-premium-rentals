@@ -62,7 +62,7 @@ export function BlogPostPage() {
       </motion.button>
 
       {/* Hero Header */}
-      <div className="relative h-[60vh] md:h-[75vh] min-h-[500px] w-full flex items-end justify-center overflow-hidden isolate">
+      <div className="relative min-h-[60vh] md:min-h-[75vh] pt-32 w-full flex items-end justify-center overflow-hidden isolate">
         {/* Parallax Background */}
         <div className="absolute inset-0 -z-20">
           <img 
@@ -92,7 +92,7 @@ export function BlogPostPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-8 leading-[1.1] tracking-tight max-w-4xl mx-auto"
+            className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-[1.2] tracking-tight max-w-4xl mx-auto"
           >
             {blog.title}
           </motion.h1>
