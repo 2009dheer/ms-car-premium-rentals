@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -19,14 +19,8 @@ export function Footer() {
               Mumbai's premium direct fleet owner. Setting the standard for reliable, high-end group travel with unparalleled precision.
             </p>
             <div className="flex gap-3">
-              <a href="#" className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center hover:bg-gray-900 hover:text-white transition-all duration-300">
+              <a href="https://www.instagram.com/mscar.in/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center hover:bg-pink-600 hover:text-white transition-all duration-300">
                 <Instagram className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center hover:bg-gray-900 hover:text-white transition-all duration-300">
-                <Facebook className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center hover:bg-gray-900 hover:text-white transition-all duration-300">
-                <Twitter className="w-4 h-4" />
               </a>
             </div>
           </div>
