@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate, Navigate } from 'react-router-dom';
-import { ArrowLeft, Clock, Calendar, User, Share2, Twitter, Linkedin, Facebook } from 'lucide-react';
+import { ArrowLeft, Clock, Calendar, User, Instagram } from 'lucide-react';
 import { motion, useScroll, useSpring } from 'motion/react';
 import { blogs } from '../data/blogs';
 
@@ -29,18 +29,6 @@ export function BlogPostPage() {
   if (!blog) {
     return <Navigate to="/blog" replace />;
   }
-
-  // Handle sharing
-  const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
-  const shareTitle = blog.title;
-
-  const openShare = (platform: string) => {
-    let url = '';
-    if (platform === 'twitter') url = `https://twitter.com/intent/tweet?url=${shareUrl}&text=${shareTitle}`;
-    if (platform === 'linkedin') url = `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`;
-    if (platform === 'facebook') url = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
-    if (url) window.open(url, '_blank', 'width=600,height=400');
-  };
 
   return (
     <div className="bg-white min-h-screen relative">
@@ -137,18 +125,17 @@ export function BlogPostPage() {
 
             <div>
               <div className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
-                <Share2 className="w-3.5 h-3.5" /> Share Article
+                <Instagram className="w-3.5 h-3.5" /> Follow Us
               </div>
               <div className="flex flex-col gap-3">
-                <button onClick={() => openShare('twitter')} className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-50 text-gray-600 hover:bg-[#1DA1F2] hover:text-white transition-all shadow-sm">
-                  <Twitter className="w-4 h-4" />
-                </button>
-                <button onClick={() => openShare('linkedin')} className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-50 text-gray-600 hover:bg-[#0A66C2] hover:text-white transition-all shadow-sm">
-                  <Linkedin className="w-4 h-4" />
-                </button>
-                <button onClick={() => openShare('facebook')} className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-50 text-gray-600 hover:bg-[#1877F2] hover:text-white transition-all shadow-sm">
-                  <Facebook className="w-4 h-4" />
-                </button>
+                <a 
+                  href="https://www.instagram.com/mscar.in/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-50 text-gray-600 hover:bg-pink-600 hover:text-white transition-all shadow-sm"
+                >
+                  <Instagram className="w-4 h-4" />
+                </a>
               </div>
             </div>
           </div>
@@ -198,21 +185,20 @@ export function BlogPostPage() {
             <div dangerouslySetInnerHTML={{ __html: blog.content }} />
           </div>
 
-          {/* Mobile Share Section */}
+          {/* Mobile Social Section */}
           <div className="mt-16 pt-8 border-t border-gray-100 lg:hidden">
             <div className="text-sm font-bold text-gray-900 uppercase tracking-widest mb-6 flex items-center justify-center gap-2">
-              <Share2 className="w-4 h-4" /> Share This Article
+              <Instagram className="w-4 h-4" /> Follow Us on Instagram
             </div>
             <div className="flex justify-center gap-4">
-              <button onClick={() => openShare('twitter')} className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-50 text-gray-600 hover:bg-[#1DA1F2] hover:text-white transition-all shadow-sm">
-                <Twitter className="w-5 h-5" />
-              </button>
-              <button onClick={() => openShare('linkedin')} className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-50 text-gray-600 hover:bg-[#0A66C2] hover:text-white transition-all shadow-sm">
-                <Linkedin className="w-5 h-5" />
-              </button>
-              <button onClick={() => openShare('facebook')} className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-50 text-gray-600 hover:bg-[#1877F2] hover:text-white transition-all shadow-sm">
-                <Facebook className="w-5 h-5" />
-              </button>
+              <a 
+                href="https://www.instagram.com/mscar.in/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-50 text-gray-600 hover:bg-pink-600 hover:text-white transition-all shadow-sm"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
             </div>
           </div>
 
